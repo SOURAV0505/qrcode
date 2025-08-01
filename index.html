@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6c63ff">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Create beautiful, modern QR codes with multiple themes and stunning visual effects">
+    <!-- Created by @CodingWriter2.0 -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QR Code Generator</h1>
+            <p>Create beautiful, modern QR codes with multiple themes and stunning visual effects</p>
+        </header>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-dollar-sign"></i>
+                <span>Free & No Ads</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-gem"></i>
+                <span>High Quality</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-paint-brush"></i>
+                <span>Multiple Themes</span>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <h2>Enter Text or URL</h2>
+            <div class="input-container">
+                <input type="text" id="qrText" placeholder="Enter your text or URL here">
+                <div class="hint">QR code generates automatically as you type</div>
+            </div>
+        </div>
+
+        <div class="theme-section">
+            <h2>Choose Theme</h2>
+            <div class="theme-categories">
+                <button class="category-btn" data-category="all">All</button>
+                <button class="category-btn active" data-category="popular">Popular</button>
+                <button class="category-btn" data-category="modern">Modern</button>
+                <button class="category-btn" data-category="creative">Creative</button>
+                <button class="category-btn" data-category="best">Best</button>
+            </div>
+            <div class="themes">
+                <div class="theme" data-theme="normal">
+                    <i class="fas fa-circle"></i> Normal
+                </div>
+                <div class="theme" data-theme="neon">
+                    <i class="fas fa-lightbulb"></i> Neon
+                </div>
+                <div class="theme" data-theme="3d-modern">
+                    <i class="fas fa-cube"></i> 3D Modern
+                </div>
+                <div class="theme" data-theme="gradient">
+                    <i class="fas fa-paint-brush"></i> Gradient
+                </div>
+                <div class="theme" data-theme="retro">
+                    <i class="fas fa-compact-disc"></i> Retro
+                </div>
+                <div class="theme" data-theme="cyberpunk">
+                    <i class="fas fa-robot"></i> Cyberpunk
+                </div>
+                <div class="theme" data-theme="minimal">
+                    <i class="fas fa-minus"></i> Minimal
+                </div>
+                <div class="theme" data-theme="blueprint">
+                    <i class="fas fa-drafting-compass"></i> Blueprint
+                </div>
+                <div class="theme" data-theme="galaxy">
+                    <i class="fas fa-star"></i> Galaxy
+                </div>
+                <div class="theme" data-theme="neon-pink">
+                    <i class="fas fa-heart"></i> Neon Pink
+                </div>
+                <div class="theme" data-theme="matrix">
+                    <i class="fas fa-terminal"></i> Matrix
+                </div>
+                <div class="theme" data-theme="sunset">
+                    <i class="fas fa-sun"></i> Sunset
+                </div>
+                <div class="theme" data-theme="aqua">
+                    <i class="fas fa-water"></i> Aqua
+                </div>
+                <div class="theme" data-theme="vintage">
+                    <i class="fas fa-camera-retro"></i> Vintage
+                </div>
+                <div class="theme" data-theme="neon-green">
+                    <i class="fas fa-leaf"></i> Neon Green
+                </div>
+                <div class="theme" data-theme="holographic">
+                    <i class="fas fa-gem"></i> Holographic
+                </div>
+                <div class="theme" data-theme="midnight">
+                    <i class="fas fa-moon"></i> Midnight
+                </div>
+                <div class="theme" data-theme="cosmic">
+                    <i class="fas fa-meteor"></i> Cosmic
+                </div>
+                <div class="theme" data-theme="neon-pulse">
+                    <i class="fas fa-bolt"></i> Neon Pulse
+                </div>
+                <div class="theme" data-theme="forest">
+                    <i class="fas fa-tree"></i> Forest
+                </div>
+                <div class="theme" data-theme="golden">
+                    <i class="fas fa-crown"></i> Golden
+                </div>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h2>Your QR Code</h2>
+            <div class="qr-container">
+                <div id="qrcode"></div>
+            </div>
+            <div class="action-buttons">
+                <button id="downloadBtn" class="action-btn">
+                    <i class="fas fa-download"></i>
+                    Download QR Code
+                </button>
+                <button id="shareBtn" class="action-btn">
+                    <i class="fas fa-share-alt"></i>
+                    Share
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Powered by <a href="#">CodingWriter2.0</a> © 2025</p>
+        </div>
+    </footer>
+    
+    <!-- Share Modal -->
+    <div class="modal" id="shareModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Share QR Code</h2>
+            <p>Share your QR code with others:</p>
+            <div class="share-options">
+                <button class="share-option" data-platform="facebook">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+                <button class="share-option" data-platform="twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+                <button class="share-option" data-platform="whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+                <button class="share-option" data-platform="email">
+                    <i class="fas fa-envelope"></i> Email
+                </button>
+            </div>
+            <div class="share-link">
+                <input type="text" id="qr-link" readonly>
+                <button id="copy-link-btn">
+                    <i class="fas fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast success" id="toast" style="display: none;">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Link copied to clipboard!</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Created by @CodingWriter2.0 -->
+</body>
+</html>
