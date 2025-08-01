@@ -37,4 +37,4 @@ A beautiful, modern QR code generator web application with multiple themes and s
 - Edge
 
 ## Credits
-Designed by sourav singh © 2025
+Designed by sourav singh 2025
